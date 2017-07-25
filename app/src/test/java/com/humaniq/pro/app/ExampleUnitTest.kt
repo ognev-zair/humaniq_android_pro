@@ -1,4 +1,4 @@
-package pro.humaniq.com.app
+package com.humaniq.pro.app
 
 import org.junit.Test
 

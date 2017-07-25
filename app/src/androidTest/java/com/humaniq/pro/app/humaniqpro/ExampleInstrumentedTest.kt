@@ -1,4 +1,4 @@
-package pro.humaniq.com.app
+package com.humaniq.pro.app.humaniqpro
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ import org.junit.Assert.*
     // Context of the app under test.
     val appContext = InstrumentationRegistry.getTargetContext()
 
-    assertEquals("pro.humaniq.com.humaniqpro", appContext.packageName)
+    assertEquals("com.humaniq.pro.app.humaniqpro", appContext.packageName)
   }
 }

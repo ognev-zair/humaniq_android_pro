@@ -1,4 +1,4 @@
-package pro.humaniq.com
+package com.humaniq.pro
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
