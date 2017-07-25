@@ -73,15 +73,41 @@ dependencies {
   def presentationTestDependencies = rootProject.ext.presentationTestDependencies
   def dataDependencies = rootProject.ext.dataDependencies
 
-  compile presentationDependencies.supportAppCompat
   compile presentationDependencies.constraintLayout
+  compile presentationDependencies.dagger
+  compile presentationDependencies.supportRecyclerView
+  compile presentationDependencies.supportCardView
+  compile presentationDependencies.supportGridLayout
+  compile presentationDependencies.supportDesign
+  compile presentationDependencies.supportAppCompat
+  compile presentationDependencies.rxJava
+  compile presentationDependencies.rxAndroid
+  compile presentationDependencies.glide
+  compile presentationDependencies.rxKotlin
+
+  provided presentationDependencies.javaxAnnotation
+
+  compile dataDependencies.retrofit2
+  compile dataDependencies.retrofit2Converter
+  compile dataDependencies.retrofit2RxAdapter
+  compile dataDependencies.gson
+  compile dataDependencies.supportAnnotations
+  compile dataDependencies.okHttpLoggingInterceptor
 
   compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
+  androidTestCompile presentationTestDependencies.mockito
+  androidTestCompile dataTestDependencies.junit
+  androidTestCompile presentationTestDependencies.dexmaker
+  androidTestCompile presentationTestDependencies.dexmakerMockito
+  androidTestCompile presentationTestDependencies.testingRunner
+  androidTestCompile presentationTestDependencies.testingRules
+  androidTestCompile presentationTestDependencies.supportAnnotations
+  androidTestCompile presentationTestDependencies.espressoIntents
   androidTestCompile (presentationTestDependencies.espresso, {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-
+  testCompile 'junit:junit:4.12'
 }
 repositories {
   mavenCentral()
