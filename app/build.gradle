@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 
 android {
@@ -73,6 +74,7 @@ dependencies {
   def presentationTestDependencies = rootProject.ext.presentationTestDependencies
   def dataDependencies = rootProject.ext.dataDependencies
 
+  kapt presentationDependencies.daggerCompiler
   compile presentationDependencies.constraintLayout
   compile presentationDependencies.dagger
   compile presentationDependencies.supportRecyclerView
@@ -111,4 +113,7 @@ dependencies {
 }
 repositories {
   mavenCentral()
+}
+kapt {
+  generateStubs = true
 }

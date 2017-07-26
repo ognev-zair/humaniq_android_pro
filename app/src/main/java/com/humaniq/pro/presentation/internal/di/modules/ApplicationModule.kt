@@ -5,8 +5,10 @@ import android.content.SharedPreferences
 import com.humaniq.pro.AndroidApplication
 import com.humaniq.pro.UIThread
 import com.humaniq.pro.data.executor.JobExecutor
+import com.humaniq.pro.data.repository.GithubDataRepository
 import com.humaniq.pro.domain.executor.PostExecutionThread
 import com.humaniq.pro.domain.executor.ThreadExecutor
+import com.humaniq.pro.domain.repository.GithubRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -48,10 +50,10 @@ class ApplicationModule(private val androidApplication: AndroidApplication) {
     return androidApplication.getSharedPreferences("app", Context.MODE_APPEND)
   }
 
-//  @Provides
-//  @Singleton
-//  fun provideGithubRepository(dataRepository: GithubDataRepository): GithubRepository {
-//    return dataRepository
-//
-//  }
+  @Provides
+  @Singleton
+  fun provideGithubRepository(dataRepository: GithubDataRepository): GithubRepository {
+    return dataRepository
+
+  }
 }

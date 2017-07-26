@@ -4,6 +4,7 @@ import android.content.Context
 import com.humaniq.pro.AndroidApplication
 import com.humaniq.pro.domain.executor.PostExecutionThread
 import com.humaniq.pro.domain.executor.ThreadExecutor
+import com.humaniq.pro.domain.repository.GithubRepository
 import com.humaniq.pro.presentation.navigation.Navigator
 import com.humaniq.pro.presentation.internal.di.modules.ApplicationModule
 import dagger.Component
@@ -28,5 +29,5 @@ interface ApplicationComponent {
 
   fun postExecutionThread(): PostExecutionThread
 
-  //fun githubRepository(): GithubRepository
+  fun githubRepository(): GithubRepository
 }
